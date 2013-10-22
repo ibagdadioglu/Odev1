@@ -1,0 +1,81 @@
+#include<stdio.h>
+void main()
+{
+int gerceksfr= 1234; // sifre 1234 oldugu icin program test edilirken bu sifre kullanilmali
+int girilensfr;
+int hesap=150;     // hesap tutarini 150 TL olarak belirledim.
+printf("Dort haneli kullanici sifresini giriniz:");
+scanf("%d\n", &girilensfr);
+if(girilensfr==gerceksfr)
+{
+	int a;
+	printf("hesabinizda 150 TL bulunmaktatir,\n");
+	printf("--------------------MENU--------------------\n");
+	printf("programi sanlandirmak icin......... 0 tusuna,\n");
+	printf("para yatirmak icin................. 1 tusuna,\n");
+	printf("para cekmek icin................... 2 tusuna,\n");
+	printf("para transferi yapmak icin......... 3 tusuna basiniz..:");
+	scanf("%d\n", &a);
+	
+  if(a==0)
+  {
+    printf("program basariyla sonlandirilmistir.\n");
+  }
+  
+
+	else if(a==1)
+	{
+		int girilendeger;
+	  printf("hesabiniza yatirmak istediginiz miktari giriniz:");
+	  scanf("%d\n", &girilendeger);
+	  hesap=hesap + girilendeger;
+	  printf("hesabinizdaki yeni tutar %d TL dir.\n", hesap);
+	}
+
+
+
+	else if(a==2)
+	{
+		int girilendeger2;
+	  printf("cekmek istediginiz tutari yaziniz:");
+	  scanf("%d", &girilendeger2);
+		if(girilendeger2<=hesap)
+			{
+				hesap = hesap-girilendeger2;
+				printf("hesabinizdaki yeni tutar %d TL dir.\n", hesap);
+			}
+		else
+			printf("yeterli bakiyeniz bulunmamaktadir.\n");
+	}
+
+
+
+
+	else if(a==3)
+	{
+		int girilendeger3;
+	  printf(" para transferi yapmak istediginiz hesabin numarasini giriniz:"); 
+	// burada kullanicidan alinan degeri bir yere atama geregi duymadim. cunku mizansenimde bir hesap daha yok.
+  	printf("\n hesaba transfer etmek istediginiz miktari giriniz:");
+	  scanf("%d", &girilendeger3);
+		if(girilendeger3<=hesap)
+		  {
+			  hesap= hesap-girilendeger3;
+			  printf("hesabinizdaki yeni tutar %d TL dir.", hesap);
+		  }
+		else
+			printf("hesabinizda yeterli bakiye bulunmamaktadir.");
+	}
+
+
+	else
+		printf("hatali deger girdiniz. menudeki degerlerden birini secmeliydiniz.");
+
+
+
+}
+
+else 
+printf("sifre hatali.");
+}
+// hocam bilgisayarimdaki bir problem nedeniyle programi test edemedim. Umarim eksiksiz calisir..
